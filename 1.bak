@@ -1,0 +1,6 @@
+(DEFINE (reverse-general L)
+        (IF (NULL? (CDR L))
+            (L)
+            (CONS (reverse-general (CDR L)) (CAR L))
+        )
+)
