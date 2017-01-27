@@ -1,6 +1,7 @@
 ;helper function to find minimum value of a list
 (DEFINE (list-minimum L)
         (COND
+         ((NULL? L) #f)
          ;if only 1 element remaining in list, it must be minimum
          ((NULL? (CDR L)) (CAR L))
          ;recursively compare first element with minimum of remaining
