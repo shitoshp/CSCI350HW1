@@ -1,4 +1,4 @@
-;helper function to find minimum value of a list
+;helper function to find minimum value of list1
 (DEFINE (list-minimum L)
         (COND
          ;null check
@@ -16,3 +16,13 @@
          (ELSE (list-minimum (CDR L)))
          )
 )
+
+;function to remove non-numbers and numbers below min from list1
+(DEFINE (remove-min list1 list2)
+        (COND
+         ((NULL? list1) list1)
+         ((NOT (NUMBER? (CAR list1))) (remove-min (CDR list1)))
+         
+         )
+)
+        
