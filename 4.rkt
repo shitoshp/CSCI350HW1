@@ -27,8 +27,24 @@
          ;if not a number, don't add
          ((NOT (NUMBER? (CAR list1))) (remove-min (CDR list1) list2))
          ;if each num of list1 is greater than min of list2, add to returning
-         ((> (CAR list1) (list-minimum list2)) (CONS (CAR list1) (remove-min(CDR list1) list2)))
+         ((> (CAR list1) (list-minimum list2)) (CONS
+                                                (CAR list1)
+                                                (remove-min(CDR list1) list2)
+                                                )
+         )
+         ;else, ignore the element and keep appending
          (ELSE (remove-min (CDR list1) list2))
          )
 )
+
+;min-above-min function
+(DEFINE (min-above-min list1 list2)
+       (COND
+        ;if no number above min of list2, return false
+        ((NULL? (remove-min list1 list2)) #f)
+        ;else, return the minimum among greater than minimum of list2
+        (ELSE (list-minimum(remove-min list1 list2)))
+        )
+)
+        
         
