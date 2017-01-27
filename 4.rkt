@@ -2,7 +2,7 @@
 (DEFINE (list-minimum L)
         (COND
          ;null check
-         ((NULL? L) #f)
+         ((NULL? L) L)
          ;if element is not a number, min of remaining list is minimum
          ((NOT (NUMBER? (CAR L))) (list-minimum (CDR L))) 
          ;if only 1 element remaining in list, it must be minimum
